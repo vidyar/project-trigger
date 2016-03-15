@@ -17,3 +17,23 @@ build:
   - echo $PROJECT_ID
   - JSON='{"projectId":"$PROJECT_ID","branchName":"master","type":"push"}'
   - 'curl -H "Content-Type: application/json" -H "Authorization: $SHIP_TOKEN" -X POST -d $JSON https://apibeta.shippable.com/projects/$PROJECT_ID/newBuild'
+
+integrations:
+  
+  notifications:
+    - integrationName: ship_slack
+      type: slack
+      recipients:
+        - "#random" 
+        - "#public-chnl"
+      on_start: always
+      on_success: always
+      on_failure: always
+      
+    - integrationName: "ship-testing"
+      type: slack
+      on_failure: always
+      on_start: always
+      on_success: always
+      recipients:
+        - "#notifications"
