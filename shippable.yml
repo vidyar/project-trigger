@@ -21,7 +21,7 @@ build:
 integrations:
   
   notifications:
-    - integrationName: ship_slack
+    - integrationName: ship-slack
       type: slack
       recipients:
         - "#random" 
@@ -30,7 +30,7 @@ integrations:
       on_success: always
       on_failure: always
       
-    - integrationName: "ship-testing"
+    - integrationName: "slack-testing"
       type: slack
       recipients:
         - "#notifications"
