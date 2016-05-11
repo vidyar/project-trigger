@@ -51,5 +51,5 @@ integrations:
         - FIZZ=buzz
       branches:
         only:
-          - master
+          - webhook-postci-trigger
       
