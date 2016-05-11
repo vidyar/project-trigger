@@ -51,6 +51,10 @@ integrations:
         - CONTAINER_NAME=$SHIPPABLE_CONTAINER_NAME
         - FOO=bar
         - FIZZ=buzz
+        
+      on_failure: always
+      on_start: always
+      on_success: never
       branches:
         only:
           - webhook-postci-trigger
