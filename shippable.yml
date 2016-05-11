@@ -40,4 +40,12 @@ integrations:
       on_failure: always
       on_start: always
       on_success: always
+    
+    - integrationName: ship-wh
+      type: webhook
+      payload:
+        - API_URL=$SHIPPABLE_API_URL
+        - CONTAINER_NAME=$SHIPPABLE_CONTAINER_NAME
+        - FOO=bar
+        - FIZZ=buzz
       
