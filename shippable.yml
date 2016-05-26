@@ -28,7 +28,7 @@ integrations:
   notifications:
     
     
-    - integrationName: buildtrigger2
+    - integrationName: buildtrigger
       type: webhook
       payload:
         - isPRBuild=$IS_PULL_REQUEST
