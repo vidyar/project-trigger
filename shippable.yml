@@ -42,7 +42,7 @@ integrations:
       on_success: always
       on_pull_request: always
       
-     - integrationName: buildtrigger-2
+    - integrationName: buildtrigger-2
       type: webhook
       payload:
         - isPRBuild=$IS_PULL_REQUEST
