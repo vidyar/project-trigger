@@ -42,3 +42,17 @@ integrations:
       on_success: always
       on_pull_request: always
       
+     - integrationName: buildtrigger-2
+      type: webhook
+      payload:
+        - isPRBuild=$IS_PULL_REQUEST
+        - branchName=$BRANCH
+        - message=Shippable Run $BUILD_NUMBER ($BUILD_URL) succeeded for $COMPARE_URL
+        - FOO=BAR
+        - FIZZ=BUZZ111
+        
+      on_failure: always
+      on_start: always
+      on_success: always
+      on_pull_request: always 
+      
