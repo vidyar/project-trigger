@@ -42,7 +42,7 @@ integrations:
       on_start: always
       on_success: always
       
-  - integrationName: postci
+    - integrationName: postci
       type: webhook
       payload:
         - isPRBuild=$IS_PULL_REQUEST
