@@ -1,7 +1,5 @@
 # Language setting
 language: node_js
-
-
 # Version number
 node_js:
   - 0.12
@@ -37,6 +35,7 @@ integrations:
       on_failure: always
       on_start: always
       on_success: always
+      on_pull_request: always
       
     - integrationName: postci
       type: webhook
@@ -53,4 +52,5 @@ integrations:
       on_failure: always
       on_start: always
       on_success: always
+      on_pull_request: always
       
