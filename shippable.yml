@@ -20,6 +20,7 @@ build:
     - echo $COMMITTER and $LAST_AUTHOR and $COMMIT_MESSAGE
   ci:
   - echo $PROJECT_ID
+  - echo $COMMITTER and $LAST_AUTHOR and $COMMIT_MESSAGE
  # - JSON='{"projectId":"$PROJECT_ID","branchName":"master","type":"push"}'
  # - 'curl -H "Authorization: apiToken $SHIP_TOKEN" -H "Content-Type: application/json" -d "{\"projectId\": \"$PROJECT_ID\"}" https://apibeta.shippable.com/projects/$PROJECT_ID/newBuild'
 
