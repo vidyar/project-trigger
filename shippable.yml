@@ -16,13 +16,16 @@ env:
    # - secure: myqBBb4G21ufRAs7U3xT6Ck/5d503jIjDWMgeX1XLus9dmHYM6taSEQhv9Q38eOw3+SKHSJYLIHL9dZRPVwYVQCyk4mQn6zwW0GEHDLgY7KDEYMPRgR7+Z5p94sQk/j9hJonb0P2xp+mRmMsWO0RkablxPa7RHe0zqq92Av+a0Pl/Up3KPF27UFbSMypJUc0mhk1INenbdU/d1Mrmh9MUWadaRlIjH447GQsB7fxZ+TJ78wNKDt/ZFYWxZo1aHc0wQNIE5dYiGT/kF1HG0/j5NxPv81M61QZyxYxsVBw78THsf5tS0IKGTsLdM6K02IiXbk9itbNGJNT8kv63TLkXA==
 
 build:
+  pre_ci:
+    - echo $COMMITTER and $LAST_AUTHOR and $COMMIT_MESSAGE
   ci:
   - echo $PROJECT_ID
  # - JSON='{"projectId":"$PROJECT_ID","branchName":"master","type":"push"}'
  # - 'curl -H "Authorization: apiToken $SHIP_TOKEN" -H "Content-Type: application/json" -d "{\"projectId\": \"$PROJECT_ID\"}" https://apibeta.shippable.com/projects/$PROJECT_ID/newBuild'
 
 #  - 'curl -H "Content-Type: application/json" -H "Authorization: $SHIP_TOKEN" -X POST -d $JSON https://apibeta.shippable.com/projects/$PROJECT_ID/newBuild'
-
+  post_ci:
+    - echo $COMMITTER and $LAST_AUTHOR and $COMMIT_MESSAGE
 integrations:
   
   notifications:
@@ -36,6 +39,9 @@ integrations:
         - message=Shippable Run $BUILD_NUMBER ($BUILD_URL) succeeded for $COMPARE_URL
         - FOO=BAR
         - FIZZ=BUZZ
+        - committer= $COMMITTER 
+        - author= $LAST_AUTHOR
+        - commitmessage= $COMMIT_MESSAGE
         
       on_failure: always
       on_start: always
@@ -50,6 +56,9 @@ integrations:
         - message=Shippable Run $BUILD_NUMBER ($BUILD_URL) succeeded for $COMPARE_URL
         - FOO=BAR
         - FIZZ=BUZZ111
+        - committer= $COMMITTER 
+        - author= $LAST_AUTHOR
+        - commitmessage= $COMMIT_MESSAGE
         
       on_failure: always
       on_start: always
