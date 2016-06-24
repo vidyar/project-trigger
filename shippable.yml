@@ -44,7 +44,9 @@ integrations:
       payload:
         - isPRBuild=$IS_PULL_REQUEST
         - branchName=$BRANCH
-        - echo $COMMITTER and $LAST_AUTHOR and $COMMIT_MESSAGE
+        - committer= $COMMITTER 
+        - last_author= $LAST_AUTHOR
+        - commit-message= $COMMIT_MESSAGE
         - message=Shippable Run $BUILD_NUMBER ($BUILD_URL) succeeded for $COMPARE_URL
         - FOO=BAR
         - FIZZ=BUZZ
